@@ -1,6 +1,7 @@
 import transformers
 
-MAX_LEN = 128 # with BERT base at least you can go up to 512. But it will cost you in memory.
+MAX_LEN = 128 # This is how big (in term of tokens which really roughly speaking translate to words : sometimes a word can be split in multiple tokens)
+#the sentences or group of sentences you are going to feed the model can be at max with BERT base at least you can go up to 512. But it will cost you in memory.
 #It is also possible that your data is not that demanding in terms of number of tokens and so 512 is an unecessary amount of padding
 TRAIN_BATCH_SIZE = 32
 VALIDATION_BATCH_SIZE= 32
