@@ -28,8 +28,8 @@ From that sentences embedding we add some regularization thanks to a Dropout. It
 
 The training is made so that we find the good weights of the linear regression (good in the sense that the highest weight\*embedd_sentence predicts the class of the sentence). Finally we use a softmax layer and take the max softmax(weight\*embedd_sentence) as being our label. In predict.py the output is the softmax without taking the max because I think it gives more information.
 
-
+## 
 The code is commented and explains choices made as well as where you should definitly tweek to build your own sentences classifier. So it is highly recommended to read it carefully.
 
-
+## Important
 **The code is heavily (I insist on heavily) inspired** by [abhishekkrthakur](https://github.com/abhishekkrthakur/bert-sentiment/) and [venelinvalkov](https://github.com/curiousily/Getting-Things-Done-with-Pytorch/blob/master/08.sentiment-analysis-with-bert.ipynb) (they both have great youtube channels that go throught their own implementation of the code). So please if you use this code, acknowledge them too.
