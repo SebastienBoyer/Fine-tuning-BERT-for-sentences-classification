@@ -25,18 +25,18 @@ It is a pretty common/straightforward sentences classifier.
 
 Basically we use a pre-trained BERT model (of our choice) to embedd the words in a sentence or a block of sentences.
 
-For that we use only the last layer hidden-state of the first token of the sequence (classification token) of BERT. In the commented code of model.py I discuss a little why and how we could get the full hidden states of the last layers or of all the layers. Indeed, this implementation is only really interesting because you can modify (it is pointed out in the commented code) the simple linear regression as well as the type of classification you intend. If you want to train a straightforward sequence classifier, like the one this example describes, you are better of using HUggingface implementations of different types of fine tunning (they have standard one for many purpose : sequence classification, question answering, etc...).
+For that we use only the last layer hidden-state of the first token of the sequence (classification token) of BERT. In the commented code of model.py I discuss a little why and how we could get the full hidden states of the last layers or of all the layers. Indeed, this implementation is only really interesting because you can modify (it is pointed out in the commented code) the simple linear regression as well as the type of classification you intend. If you want to train a straightforward sequence classifier, like the one this example describes, you are better off using Huggingface implementations of different types of fine tunning (they have standard one for many purposes : sequence classification, question answering, etc...).
 
-From this embedding we add some regularization thanks to a Dropout. It then proceeds to fit a linear regression to this BERT output thanks to a linear layer. The linear layer matrix coefficient projects the BERT output into a base made of your classes.
+From this embedding we add some regularization thanks to a Dropout. It then proceeds to fit a linear regression to this BERT output thanks to a linear layer. The linear layer matrix coefficient projects the BERT outputs into a base made of your classes.
 
-The training is made so that we find the good weights of the linear regression (good in the sense that the highest weight\*embedd_sentence predicts the class of the sentence). Finally we use a softmax layer and take the max softmax(weight\*embedd_sentence) as being our label. In predict.py the output is the softmax without taking the max because I think it gives more information.
+Finally we use a softmax layer and take the max softmax(linear_weight\*embedd_sentence) as being our label. In predict.py the output is the softmax without taking the max because I think it gives more information.
 
-This implementation offers you the choice of which the layers will be affected by weight decay regularization : another source of regularization than Dropout. Modify the no_decay.txt text file for that.
+This implementation offers you the choice of which layers will be affected by weight decay regularization : another source of regularization than Dropout. Modify the no_decay.txt text file for that.
 
-It also allows you to choose the depth of your fine tunning. Indeed you can choose to tune any different layers of your model, freezing the others. You could imagine tuning all the weights in your model : the weights of BERT pre trained and of your subsequent layers that you added. Or for example you can decide to freeze entierly BERT and only tune the layers you added.Modify the to_optimize.txt text file for that. 
+It also allows you to choose the depth of your fine tunning. Indeed you can choose to tune any different layers of your model, freezing the others. You could imagine tuning all the weights in your model : the weights of BERT pre trained and of your subsequent layers that you added. Or for example you can decide to freeze entierly BERT and only tune the layers you added. Modify the to_optimize.txt text file for that. 
 
 ## The code is full of information:
-The code is commented and explains choices made as well as where you should definitly tweek to build your own sentences classifier. So it is highly recommended to read it carefully.
+The code is commented and explains choices made as well as where you should definitly tweek to build your own sentences or whatever classifier. So it is highly recommended to read it carefully.
 
 ## Important
 **The code is heavily (I insist on heavily) inspired** by [abhishekkrthakur](https://github.com/abhishekkrthakur/bert-sentiment/) and [venelinvalkov](https://github.com/curiousily/Getting-Things-Done-with-Pytorch/blob/master/08.sentiment-analysis-with-bert.ipynb) (they both have great youtube channels with videos that go throught their own implementation of the code). So please if you use this code, acknowledge them too.
