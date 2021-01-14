@@ -1,0 +1,20 @@
+├── bert_base_uncased (pre_trained BERT, MORE : https://github.com/google-research/bert or https://huggingface.co/models)
+│   ├── config.json
+│   ├── pytorch_model.bin
+│   └── vocab.txt
+├── input
+│   ├── dico_sentiment.json (your dictionary associating element of classes to contiguous int)
+│   ├── no_decay.txt (text file with a key word per line referencing the layers you don't want decay on )
+│   ├── to_optimize.txt (text file with name of the layers taht you want to optimize : not frozen. If empty everything is optimized)
+│   ├── train_val.csv (your dataset before train validation split)
+│   └── val_train (directory that will save your train validation split)
+├── model.bin (the model fine tunned)
+├── predictions (where predict.py saves its results)
+└── src
+    ├── config.py
+    ├── dataset.py
+    ├── engine.py
+    ├── model.py
+    ├── predict.py
+    └── train.py
+
