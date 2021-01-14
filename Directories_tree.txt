@@ -5,7 +5,7 @@
 ├── input
 │   ├── dico_sentiment.json (your dictionary associating element of classes to contiguous int)
 │   ├── no_decay.txt (text file with a key word per line referencing the layers you don't want decay on )
-│   ├── to_optimize.txt (text file with name of the layers taht you want to optimize : not frozen. If empty everything is optimized)
+│   ├── to_optimize.txt (text file with names of the layers , one per line, that you want to optimize : not frozen. If empty everything is optimized)
 │   ├── train_val.csv (your dataset before train validation split)
 │   └── val_train (directory that will save your train validation split)
 ├── model.bin (the model fine tunned)
