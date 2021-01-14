@@ -1,4 +1,4 @@
-# Fine tunning BERT for sentences classification
+# Fine tuning BERT for sentences classification
 
 Here you will find all the description needed to finetune the classical BERT model pretrained from [initial BERT paper](https://arxiv.org/pdf/1810), [models in huggingface](https://huggingface.co/models), [models from BERT](https://github.com/google-research/bert) on a subset of the emotion annotated data from [stanford go emotions](https://github.com/google-research/google-research/tree/master/goemotions).
 
