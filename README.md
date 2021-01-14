@@ -3,6 +3,11 @@
 Here you will find all the description needed to finetune the classical BERT model pretrained from [initial BERT paper](https://arxiv.org/pdf/1810), [models in huggingface](https://huggingface.co/models), [models from BERT](https://github.com/google-research/bert) on a subset of the emotion annotated data from [stanford go emotions](https://github.com/google-research/google-research/tree/master/goemotions).
 
 
+## The goal:
+- Have a ready to use code for whatever sequence classification usage you have in mind.
+- Have a framework basis to modify/enhance sequence classification fine tuning or even better, write another classifier or fine tuner for another task. 
+
+
 ## What's in here:
 Check Directories_tree.txt. But briefly:
 - BERT_env_cluster.yml enables the building of the environment I used on the sciCORE cluster. 
