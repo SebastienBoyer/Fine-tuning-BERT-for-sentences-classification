@@ -23,6 +23,8 @@ Check config.py in src directory, or Directories_tree.txt for what you need. But
 - a json file that will link the name of your classes to an int : all the int should start at 0 and be contiguous (check example).
 - a train_validation set (training validation spliting is taking care of in train.py) of the csv format. Check the example : where our features are "sentences" and our targets are "emotion" (int).
 - predict.py needs a path toward a directory in which all the files are going to be predicted (-d).
+- to change the to_optimize.txt in the input directory with the names of the layers that you want to tune (one per line). Kept empty all the layers will be optimized (tuned). If you add only the name of the last linear layer that I added to the model (it is called #out" in the code), then the BERT weights will be frozen and you will only optimize the weights of this linear layer (linear regression).
+- To change the no_decay.txt file with names of the layers (or part of the name, in both case one per line) on which you don't want a weight decay regularization. For example if you put "out.bias" : no weights decay on the bias of the linear layer that I called "out" in the code. If you just put "out" then all the weights and the bias of this "out" linear layer will not be affected by weights decay. If the file is kept empty then every weights and bias of the whole model will be under weights decay. 
 
 
 ## What's under the hood:
